@@ -16,12 +16,21 @@ namespace Sandbox
 
         public void Deposit(double amount)
         {
-            balance = balance + amount;
+            if (amount > 0)
+            {
+                balance = balance + amount;
+            }
+           
         }
 
         public void Withdraw(double amount)
         {
-            balance = balance - amount;
+            if (amount <= balance && amount > 0)
+            {
+                balance = balance - amount;
+                
+            }
+        
         }
 
         public double GetBalance()
